@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, styled, Paper, TextField, Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import './App.css';
@@ -44,8 +46,9 @@ function GridInputs({ setTotals }) {
                         <TextField
                             autoComplete='off'
                             {...register("minutesPlayed")}
-                            required id="setMinutesPlayed"
-                            required label="Minutes Played"
+                            required
+                            id="setMinutesPlayed"
+                            label="Minutes Played"
                             variant="standard"
                         />
                     </Item>
@@ -68,4 +71,7 @@ function GridInputs({ setTotals }) {
     );
 }
 
+GridInputs.propTypes = {
+    setTotals: PropTypes.func
+}
 export default GridInputs;

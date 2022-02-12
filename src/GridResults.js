@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { Grid, styled, Paper, TextField, Button } from '@mui/material';
 import './App.css';
@@ -43,4 +45,13 @@ function GridResults({ results, setTotals }) {
     );
 }
 
+GridResults.propTypes = {
+    setTotals: PropTypes.func,
+    results: PropTypes.objectOf({
+        ptsPerQuarter: PropTypes.number,
+        expectedtotal: PropTypes.number,
+        expected: PropTypes.number,
+        difference: PropTypes.number
+    })
+}
 export default GridResults;
